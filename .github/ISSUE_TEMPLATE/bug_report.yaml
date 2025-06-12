@@ -1,0 +1,77 @@
+name: 🐞 Bug Report
+description: Create a report to help us improve
+title: "[Bug] <Short description of the bug>"
+labels: ["bug"]
+assignees:
+  - raghul-tech
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🙋‍♂️ Thank you for taking the time to report a bug!
+
+  - type: input
+    id: environment
+    attributes:
+      label: 💻 Environment
+      description: What system are you using?
+      placeholder: "e.g. Windows 11, Java 17, JavaFX 20"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 📝 Describe the bug
+      description: Give a clear and concise description of what the bug is.
+      placeholder: "When I launch the preview with an empty file, the app crashes..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 🔁 Steps to Reproduce
+      description: How can we reproduce the behavior?
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. Scroll down to '...'
+        4. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: ✅ Expected behavior
+      description: What did you expect to happen?
+      placeholder: "I expected the preview to open without crashing."
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: 📸 Screenshots (if applicable)
+      description: Add any screenshots that help explain your problem.
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 📄 Relevant log output (if any)
+      description: Paste any stack trace or console output here.
+      render: shell
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: ✅ Checklist
+      options:
+        - label: I have searched the [existing issues](https://github.com/raghul-tech/javafx-markdown-preview/issues).
+          required: true
+        - label: I am using the **latest version** of JavaFX Markdown Preview.
+          required: true
+        - label: I have provided all necessary information.
+          required: true
