@@ -23,16 +23,22 @@ jobs:
         language: [ 'java' ]
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v2
-      with:
-        languages: ${{ matrix.language }}
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v2
+        with:
+          languages: ${{ matrix.language }}
 
-    - name: Build project
-      run: ./gradlew build
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '23'  # Or your actual Java version
+          distribution: 'temurin'
 
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v2
+      - name: Build project with Maven
+        run: mvn clean install
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v2
