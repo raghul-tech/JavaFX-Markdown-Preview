@@ -27,18 +27,18 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v2
+        uses: github/codeql-action/init@v3
         with:
           languages: ${{ matrix.language }}
 
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
-          java-version: '23'  # Or your actual Java version
+          java-version: '23'
           distribution: 'temurin'
 
-      - name: Build project with Maven
-        run: mvn clean install
+      - name: Build project with Maven (GPG disabled)
+        run: mvn clean install -Dgpg.skip=true
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v2
+        uses: github/codeql-action/analyze@v3

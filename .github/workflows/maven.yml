@@ -20,5 +20,13 @@ jobs:
           java-version: '23'
           distribution: 'temurin'
 
-      - name: Build with Maven
-        run: mvn clean install
+      - name: Import GPG key
+        run: |
+          echo "$GPG_PRIVATE_KEY" | gpg --batch --import
+          echo "allow-loopback-pinentry" >> ~/.gnupg/gpg-agent.conf
+          echo "pinentry-mode loopback" >> ~/.gnupg/gpg.conf
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+
+      - name: Build with Maven (GPG Enabled)
+        run: mvn -B clean install -Dgpg.passphrase="${{ secrets.GPG_PASSPHRASE }}" -Dgpg.pinentry.mode=loopback
