@@ -25,15 +25,18 @@
   <parent>
     <groupId>io.github.raghul-tech</groupId>
     <artifactId>javafx-markdown-preview-parent</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
   </parent>
 
   <artifactId>javafx-markdown-preview</artifactId>
+
+<packaging>jar</packaging>
 
   <name>JavaFX Markdown Preview</name>
   <description>
 A minimal JavaFX Markdown Preview library providing only the core source code. This module makes it easy to render live Markdown previews with real-time file watching. You can embed previews in a separate window, a Tab, a TabPane, or reuse the WebView component anywhere in your JavaFX application. Simple to integrate and customize. For usage examples and documentation, see the GitHub repository.
 </description>
+<url>https://github.com/raghul-tech/JavaFX-Markdown-Preview</url>
 
 
   <dependencies>

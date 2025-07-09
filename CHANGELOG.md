@@ -23,6 +23,58 @@ All notable changes to **JavaFX Markdown Preview** will be documented in this fi
 
 ---
 
+## [1.0.3] - 2025-07-09
+
+## ✨ Added
+
+- ✅ **Source and Javadoc Jars** 
+
+	- All artifacts now include sources and Javadoc to comply with Maven Central requirements.
+
+- ✅ **Improved Multi-Module Build**
+
+	- Clean separation of `parent`, `all`, and `minimal` modules with consistent packaging.
+
+- ✅ **Metadata Enhancements**
+
+	- Added project URL, SCM info, developer information, and license declarations.
+
+- ✅ **Central Publishing Config**
+
+	- Maven Central and Sonatype deployment configuration improved for reliability.
+
+---
+
+## 🛠️ Improved
+- 🧹 **Parent POM**
+
+	- Simplified plugin management and property inheritance.
+
+- 🪄 **Deployment Stability**
+
+	- Resolved previous build errors (`Component with package URL already exists`).
+
+- ⚡ **Cleaner Artifacts**
+
+	- Removed duplicate and incomplete packages from the release pipeline.
+
+---
+
+## 🐞 Fixed
+- 🐛 Fixed invalid plugin configurations for source/javadoc generation.
+
+- 🐛 Fixed shading issues causing incomplete shaded jars.
+
+---
+
+# 💡 Note
+> Version 1.0.2 introduced multi-module packaging and all the new features.
+> However, due to deployment issues, it was never fully published to Maven Central.
+> Version 1.0.3 includes the same functionality with additional improvements and
+> is the first stable, signed release. Please use 1.0.3 or later for production.
+
+---
+
 ## [1.0.2] - 2025-07-09
 
 ### ✨ Added

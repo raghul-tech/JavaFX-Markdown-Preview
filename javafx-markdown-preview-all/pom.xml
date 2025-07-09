@@ -25,16 +25,18 @@
   <parent>
     <groupId>io.github.raghul-tech</groupId>
     <artifactId>javafx-markdown-preview-parent</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
   </parent>
 
   <artifactId>javafx-markdown-preview-all</artifactId>
+
+<packaging>jar</packaging>
 
   <name>JavaFX Markdown Preview All</name>
  <description>
 A JavaFX Markdown Preview module bundled with Flexmark for Markdown rendering. This artifact provides a shaded JAR containing all necessary dependencies except JavaFX itself. Simply add your preferred JavaFX libraries as dependencies marked as provided. Includes utilities to display Markdown previews in WebView, VBox, Scene, Stage, and TabPane without requiring separate Flexmark installation.
 </description>
-
+<url>https://github.com/raghul-tech/JavaFX-Markdown-Preview</url>
 
   <dependencies>
     <!-- JavaFX marked as PROVIDED -->
@@ -123,33 +125,33 @@ A JavaFX Markdown Preview module bundled with Flexmark for Markdown rendering. T
         </executions>
       </plugin>
 
-      <!-- Source Jar -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-        <version>3.2.1</version>
-        <executions>
-          <execution>
-            <id>attach-sources</id>
-            <phase>package</phase>
-            <goals><goal>jar</goal></goals>
-          </execution>
-        </executions>
-      </plugin>
+ <!-- Source Jar Plugin -->
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-source-plugin</artifactId>
+      <version>3.2.1</version>
+      <executions>
+        <execution>
+          <id>attach-sources</id>
+          <phase>package</phase>
+          <goals><goal>jar</goal></goals>
+        </execution>
+      </executions>
+    </plugin>
 
-      <!-- Javadoc Jar -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>3.6.3</version>
-        <executions>
-          <execution>
-            <id>attach-javadocs</id>
-            <phase>package</phase>
-            <goals><goal>jar</goal></goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
+    <!-- Javadoc Jar Plugin -->
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-javadoc-plugin</artifactId>
+      <version>3.6.3</version>
+      <executions>
+        <execution>
+          <id>attach-javadocs</id>
+          <phase>package</phase>
+          <goals><goal>jar</goal></goals>
+        </execution>
+      </executions>
+    </plugin>
+  </plugins>
   </build>
 </project>

@@ -24,7 +24,7 @@
 
   <groupId>io.github.raghul-tech</groupId>
   <artifactId>javafx-markdown-preview-parent</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3</version>
   <packaging>pom</packaging>
 
    <name>JavaFX Markdown Preview Parent</name>
@@ -53,7 +53,7 @@ Parent POM for JavaFX Markdown Preview – a modular JavaFX-based library for re
     <url>https://github.com/raghul-tech/JavaFX-Markdown-Preview</url>
     <connection>scm:git:git://github.com/raghul-tech/JavaFX-Markdown-Preview.git</connection>
     <developerConnection>scm:git:ssh://github.com:raghul-tech/JavaFX-Markdown-Preview.git</developerConnection>
-    <tag>v1.0.2</tag>
+    <tag>HEAD</tag>
   </scm>
 
 

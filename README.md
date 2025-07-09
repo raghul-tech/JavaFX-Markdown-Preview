@@ -49,8 +49,8 @@
   </a>
 
   <!-- Javadoc -->
-  <a href="https://javadoc.io/doc/io.github.raghul-tech/javafx-markdown-preview/1.0.1">
-    <img src="https://img.shields.io/badge/Javadoc-1.0.2-blue?style=for-the-badge&logo=java" alt="Javadoc (1.0.2)" />
+  <a href="https://javadoc.io/doc/io.github.raghul-tech/javafx-markdown-preview/1.0.3">
+    <img src="https://img.shields.io/badge/Javadoc-1.0.3-blue?style=for-the-badge&logo=java" alt="Javadoc (1.0.3)" />
   </a>
 
   <!-- Support -->
@@ -85,14 +85,28 @@ Whether you’re building a Markdown editor, a documentation viewer, or just nee
 
 ---
 
-## ✨ New in 1.0.2
+## ✨ What's New in 1.0.3
 
-- 🎯 **Tab and TabPane support**
-- 🧩 **Standalone WebView component**
-- 🌈 **Enhanced GitHub-style themes**
-- 📝 **Syntax highlighting and copy buttons**
-- ⚡ **Improved real-time updates**
-- 💡 **JavaFX 17 compatibility**
+>**Note**:
+>**Version 1.0.2** contained all the new features below but failed deployment to Maven Central.
+>**Version 1.0.3** is the first properly signed and published release.
+>Please upgrade to **1.0.3**.
+
+- 🎯 **Tab and TabPane Support**
+  - Embed previews inside `TabPane` with lifecycle management.
+- 🧩 **Standalone WebView Component**
+  - Use a `WebView` node in any JavaFX layout (`VBox`, `HBox`, `BorderPane`).
+- 🌈 **Enhanced GitHub-Style Themes**
+  - Cleaner dark and light themes matching GitHub styling.
+- 📝 **Syntax Highlighting & Copy Buttons**
+  - Beautiful code blocks with one-click copy support.
+- ⚡ **Improved Real-Time Updates**
+  - Live reload when files change, with reduced flicker.
+- 💡 **JavaFX 17 Compatibility**
+  - Runs smoothly on JavaFX 11–17.
+
+✅ **Why use 1.0.3?** 
+>This version ensures a verified signature, successful publication to Maven Central, and fully reproducible builds.
 
 ---
 
@@ -130,7 +144,7 @@ Add the dependency in your `pom.xml`:
   
   <artifactId>javafx-markdown-preview-all</artifactId>
   
-  <version>1.0.2</version>
+  <version>1.0.3</version>
   
 </dependency>
 ```
@@ -142,7 +156,7 @@ Or browse it on [Maven Central](https://central.sonatype.com/artifact/io.github.
 <dependency>
   <groupId>io.github.raghul-tech</groupId>
   <artifactId>javafx-markdown-preview</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3</version>
 </dependency>
 
 <dependency>
@@ -183,18 +197,18 @@ Or browse it on [Maven Central](https://central.sonatype.com/artifact/io.github.
 ### **Compile:**
 
 ```bash
-javac -cp java-markdown-preview-all-1.0.2.jar Markdown.java
+javac -cp java-markdown-preview-all-1.0.3.jar Markdown.java
 ```
 ### **Run:**
 
 > Windows:
 ```bash
-java -cp .;java-markdown-preview-all-1.0.2.jar Markdown
+java -cp .;java-markdown-preview-all-1.0.3.jar Markdown
 ```
 
 > Linux/macOS:
 ```bash
-java -cp .:java-markdown-preview-all-1.0.2.jar Markdown
+java -cp .:java-markdown-preview-all-1.0.3.jar Markdown
 ```
 ---
 
