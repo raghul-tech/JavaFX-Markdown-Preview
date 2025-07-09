@@ -1,3 +1,22 @@
+<!--
+ * Copyright (C) 2025 Raghul-tech
+ * https://github.com/raghul-tech
+ * This file is part of JavaFX Markdown Preview.
+ *
+ * JavaFX Markdown Preview is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * JavaFX Markdown Preview is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with JavaFX Markdown Preview.  If not, see <https://www.gnu.org/licenses/>.
+-->
+
 # 📝 JavaFX Markdown Preview
 - A modern Java library for **live Markdown rendering in JavaFX**.
 
@@ -232,4 +251,4 @@ String styledHtml = renderer.getStyledHtml(
 ---
 
 ## ❤️ License
-- This project is licensed under the [GNU General Public License v3](LICENSE).
+- This project is licensed under the [GNU General Public License v3](https://github.com/raghul-tech/JavaFX-Markdown-Preview/blob/main/LICENSE).
