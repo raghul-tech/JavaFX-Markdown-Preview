@@ -1,99 +1,88 @@
+<!--
+ * Copyright (C) 2025 Raghul-tech
+ * https://github.com/raghul-tech
+ * This file is part of JavaFX Markdown Preview.
+ *
+ * JavaFX Markdown Preview is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * JavaFX Markdown Preview is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with JavaFX Markdown Preview.  If not, see <https://www.gnu.org/licenses/>.
+-->
+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>io.github.raghul-tech</groupId>
-  <artifactId>javafx-markdown-preview</artifactId>
-  <version>1.0.1</version>
-  <packaging>jar</packaging>
+  <artifactId>javafx-markdown-preview-parent</artifactId>
+  <version>1.0.2</version>
+  <packaging>pom</packaging>
 
-<name>JavaFX Markdown Preview</name>
-<description>A reusable Markdown preview tool for any Java project, powered by JavaFX WebView and Flexmark. Supports file and string input, live reload, and easy integration.</description>
-<url>https://github.com/raghul-tech/JavaFX-Markdown-Preview</url>
+   <name>JavaFX Markdown Preview Parent</name>
+  <description>
+Parent POM for JavaFX Markdown Preview – a modular JavaFX-based library for rendering live Markdown previews with file-watching support, theming, and integration flexibility. This parent project aggregates reusable components designed to build rich Markdown-based preview tools in modern desktop Java applications.
+</description>
 
-  <licenses>
-    <license>
-      <name>The MIT License</name>
-      <url>https://opensource.org/licenses/MIT</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
+
+  <url>https://github.com/raghul-tech/JavaFX-Markdown-Preview</url>
+
+  <modules>
+    <module>javafx-markdown-preview</module>
+    <module>javafx-markdown-preview-all</module>
+  </modules>
+
+<licenses>
+  <license>
+    <name>GNU General Public License, Version 3</name>
+    <url>https://www.gnu.org/licenses/gpl-3.0.en.html</url>
+    <distribution>repo</distribution>
+  </license>
+</licenses>
+
 
   <scm>
     <url>https://github.com/raghul-tech/JavaFX-Markdown-Preview</url>
     <connection>scm:git:git://github.com/raghul-tech/JavaFX-Markdown-Preview.git</connection>
     <developerConnection>scm:git:ssh://github.com:raghul-tech/JavaFX-Markdown-Preview.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>v1.0.2</tag>
   </scm>
 
-  <developers>
-    <developer>
-      <id>raghultech</id>
-      <name>Raghul-tech</name>
-      <email>raghultech.app@gmail.com</email>
-    </developer>
-  </developers>
 
-  <distributionManagement>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-    <repository>
-      <id>ossrh</id>
-      <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </repository>
-  </distributionManagement>
+<developers>
+  <developer>
+    <id>raghul-tech</id>
+    <name>Raghul-tech</name>
+    <email>raghultech.app@gmail.com</email>
+  </developer>
+</developers>
+
+<distributionManagement>
+  <repository>
+    <id>ossrh</id>
+    <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+  </repository>
+  <snapshotRepository>
+    <id>ossrh</id>
+    <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+  </snapshotRepository>
+</distributionManagement>
+
 
   <properties>
-    <java.version>23</java.version>
-    <javafx.version>23</javafx.version>
-    <gpg.keyname>740F6A0F9196C2E88F81938C89FCDC1BEBED3095</gpg.keyname>
+    <java.version>17</java.version>
+     <javafx.version>17</javafx.version>
   </properties>
 
-  <dependencies>
-    <!-- JavaFX -->
-    <dependency>
-      <groupId>org.openjfx</groupId>
-      <artifactId>javafx-controls</artifactId>
-      <version>${javafx.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.openjfx</groupId>
-      <artifactId>javafx-web</artifactId>
-      <version>${javafx.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.openjfx</groupId>
-      <artifactId>javafx-graphics</artifactId>
-      <version>${javafx.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.openjfx</groupId>
-      <artifactId>javafx-fxml</artifactId>
-      <version>${javafx.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.openjfx</groupId>
-      <artifactId>javafx-base</artifactId>
-      <version>${javafx.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.openjfx</groupId>
-      <artifactId>javafx-swing</artifactId>
-      <version>${javafx.version}</version>
-    </dependency>
-
-    <!-- Flexmark -->
-    <dependency>
-      <groupId>com.vladsch.flexmark</groupId>
-      <artifactId>flexmark-all</artifactId>
-      <version>0.64.8</version>
-    </dependency>
-  </dependencies>
-
-  <build>
+ <build>
     <plugins>
       <!-- Maven Compiler -->
       <plugin>
@@ -104,85 +93,24 @@
         </configuration>
       </plugin>
 
-      <!-- Maven GPG Plugin -->
-   <plugin>
-  <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-gpg-plugin</artifactId>
-  <version>3.1.0</version>
-  <executions>
-    <execution>
-      <id>sign-artifacts</id>
-      <phase>verify</phase>
-      <goals>
-        <goal>sign</goal>
-      </goals>
-    </execution>
-  </executions>
-  <configuration>
-    <keyname>${gpg.keyname}</keyname>
-    <useAgent>true</useAgent> <!-- Optional, only if using gpg-agent -->
-    <defaultKeyring>false</defaultKeyring> <!-- Optional, only if you use a custom keyring -->
-  </configuration>
-</plugin>
-
-
-
-      <!-- Maven Deploy Plugin -->
-      <plugin>
-        <artifactId>maven-deploy-plugin</artifactId>
-        <version>3.1.1</version>
-      </plugin>
-
-      <!-- Shade Plugin for Fat JAR -->
+      <!-- Maven GPG -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-shade-plugin</artifactId>
-        <version>3.2.4</version>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>3.1.0</version>
         <executions>
           <execution>
-            <phase>package</phase>
-            <goals><goal>shade</goal></goals>
-            <configuration>
-              <createDependencyReducedPom>false</createDependencyReducedPom>
-              <minimizeJar>false</minimizeJar>
-            </configuration>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
+            <goals><goal>sign</goal></goals>
           </execution>
         </executions>
+        <configuration>
+          <useAgent>true</useAgent>
+        </configuration>
       </plugin>
 
-      <!-- Source JAR -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-        <version>3.2.1</version>
-        <executions>
-          <execution>
-            <id>attach-sources</id>
-            <phase>package</phase> <!-- changed from verify -->
-            <goals>
-              <goal>jar</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
-      <!-- Javadoc JAR -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>3.6.3</version>
-        <executions>
-          <execution>
-            <id>attach-javadocs</id>
-            <phase>package</phase> <!-- changed from verify -->
-            <goals>
-              <goal>jar</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
-      <!-- Central Publishing Plugin -->
+      <!-- Central Publishing -->
       <plugin>
         <groupId>org.sonatype.central</groupId>
         <artifactId>central-publishing-maven-plugin</artifactId>
@@ -194,8 +122,6 @@
           <waitUntil>published</waitUntil>
         </configuration>
       </plugin>
-      
     </plugins>
   </build>
-
 </project>

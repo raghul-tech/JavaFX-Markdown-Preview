@@ -1,8 +1,30 @@
+<!--
+ * Copyright (C) 2025 Raghul-tech
+ * https://github.com/raghul-tech
+ * This file is part of JavaFX Markdown Preview.
+ *
+ * JavaFX Markdown Preview is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * JavaFX Markdown Preview is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with JavaFX Markdown Preview.  If not, see <https://www.gnu.org/licenses/>.
+-->
+
 <p align="center">
   <img src="img/MD.png" alt="JavaFX Markdown Preview Banner" width="150" />
 </p>
 
 <h1 align="center">JavaFX Markdown Preview</h1>
+<p align="center">
+  <strong>⚡ Fast. 🖼️ Beautiful. 🎯 Real-Time. 🌓 Theme-Aware.</strong>
+</p>
 
 <p align="center">
 
@@ -28,7 +50,7 @@
 
   <!-- Javadoc -->
   <a href="https://javadoc.io/doc/io.github.raghul-tech/javafx-markdown-preview/1.0.1">
-    <img src="https://img.shields.io/badge/Javadoc-1.0.1-blue?style=for-the-badge&logo=java" alt="Javadoc (1.0.1)" />
+    <img src="https://img.shields.io/badge/Javadoc-1.0.2-blue?style=for-the-badge&logo=java" alt="Javadoc (1.0.2)" />
   </a>
 
   <!-- Support -->
@@ -47,16 +69,39 @@
 
 Whether you’re building a Markdown editor, a documentation viewer, or just need a clean way to preview `.md` content inside your app — this tool saves you hours of work by offering a plug-and-play experience.
 
-### Why use this?
+### Why use this? 
 
-✅ **Plug-and-play setup** – Integrate in just minutes  
-✅ **Live preview support** – Automatically updates when the file changes  
-✅ **Cross-platform UI** – Works on Windows, macOS, and Linux  
-✅ **Flexmark-powered** – Renders CommonMark-compliant Markdown  
-✅ **No browser dependencies** – Uses JavaFX WebView internally  
-✅ **Reusable** – Add to any JavaFX or plain Java project easily
+✅ **Embed anywhere** – Tabs, windows, or any JavaFX layout  
+✅ **Live preview** – Automatic updates when files change  
+✅ **Syntax highlighting** – Beautiful, GitHub-style code blocks  
+✅ **Copy buttons** – One-click copy of code snippets  
+✅ **Dark and light themes** – Easy toggling  
+✅ **Markdown to HTML export** – Generate styled HTML  
+✅ **Cross-platform** – Windows, macOS, Linux  
+✅ **No browser dependency** – Uses JavaFX WebView
+
 
 > Whether you're developing documentation tools, note-taking apps, IDE plugins, or just need a Markdown viewer, this tool offers a ready-made and customizable solution.
+
+---
+
+## ✨ New in 1.0.2
+
+- 🎯 **Tab and TabPane support**
+- 🧩 **Standalone WebView component**
+- 🌈 **Enhanced GitHub-style themes**
+- 📝 **Syntax highlighting and copy buttons**
+- ⚡ **Improved real-time updates**
+- 💡 **JavaFX 17 compatibility**
+
+---
+
+## 📦 Available Modules
+
+| Artifact Name                       | Includes Flexmark | Use Case                         |
+|------------------------------------|-------------------|-----------------------------------|
+| `javafx-markdown-preview`         | ❌ No              | For Maven users with their own Flexmark setup    |
+| `javafx-markdown-preview-all`     | ✅ Yes            | Works out of the box, no extra setup       |
 
 ---
 
@@ -66,12 +111,15 @@ Whether you’re building a Markdown editor, a documentation viewer, or just nee
 - 🔄 Real-time preview with file change detection
 - 🖥️ Opens in a separate JavaFX window
 - 🔁 Reopen preview window if closed
+- 🧩 Embed in any JavaFX scene or layout
 - ☕ Supports both Java and JavaFX projects
 - ⚡ Lightweight and reusable as a utility
 
 ---
 
 ## 📦 Install via Maven
+
+### 🛠️ Option 1: All-in-One (Flexmark + Code)
 
 Add the dependency in your `pom.xml`:
 
@@ -80,96 +128,54 @@ Add the dependency in your `pom.xml`:
 
   <groupId>io.github.raghul-tech</groupId>
   
-  <artifactId>javafx-markdown-preview</artifactId>
+  <artifactId>javafx-markdown-preview-all</artifactId>
   
-  <version>1.0.1</version>
+  <version>1.0.2</version>
   
 </dependency>
 ```
+Or browse it on [Maven Central](https://central.sonatype.com/artifact/io.github.raghul-tech/javafx-markdown-preview-all).
+
+### 🪶 Option 2: Minimal (bring your own Flexmark)
+
+```xml
+<dependency>
+  <groupId>io.github.raghul-tech</groupId>
+  <artifactId>javafx-markdown-preview</artifactId>
+  <version>1.0.2</version>
+</dependency>
+
+<dependency>
+  <groupId>com.vladsch.flexmark</groupId>
+  <artifactId>flexmark-all</artifactId>
+  <version>0.64.8</version>
+</dependency>
+```
+
 Or browse it on [Maven Central](https://central.sonatype.com/artifact/io.github.raghul-tech/javafx-markdown-preview).
 
 ---
 
-## 🚀 Usage Example
-1. Load from Markdown File
+## 🏗️ Example Projects
+- You’ll find ready-to-run examples in the [`examples/`](examples/) directory:
 
-```java
-import com.raghultech.markdown.preview.JavaFXMarkdownPreview;
-import java.io.File;
-import java.util.Scanner;
+	- [`ExampleWindow.java`](examples/ExampleWindow.java) – Launches the preview in a **standalone JavaFX window**, ideal for external Markdown viewers or editor popouts.
 
-public class Markdown {
-    public static void main(String[] args) {
-        File file = new File("demo.md");
-        JavaFXMarkdownPreview preview = new JavaFXMarkdownPreview(file);
-        preview.launchPreview();
+	- [`ExampleTabPane.java`](examples/ExampleTabPane.java) – Embeds the preview as a tab inside a `TabPane`, great for multi-tab document editors.
 
-        Scanner scanner = new Scanner(System.in);
+	- [`ExampleWebview.java`](examples/ExampleWebview.java) –  Shows how to **embed the preview WebView** into any JavaFX layout, such as `VBox`, `BorderPane`, or `StackPane`.
+	
+	- [`ExampleRenderer.java`](examples/ExampleRenderer.java) –  Demonstrates using the `MarkdownRenderer` utility to **convert Markdown content into styled HTML**, useful for exporting or rendering elsewhere. 
 
-        while (true) {
-            while (preview.isPreviewShowing()) {
-                try { Thread.sleep(1000); } catch (InterruptedException ignored) {}
-            }
+✅ To run an example:
 
-            System.out.print("Preview window closed. Reopen? (yes/no): ");
-            String response = scanner.nextLine().trim().toLowerCase();
+1. Download or clone this repository.
 
-            if (response.equals("yes")) {
-                preview.reopenWindow();
-            } else {
-                System.out.println("Exiting...");
-                break;
-            }
-        }
+2. Navigate to [`examples/`](examples/) folder.
 
-        scanner.close();
-        System.exit(0);
-    }
-}
-```
-2. Load from Markdown String
+3. Compile and run the desired file.
 
-```java
-import com.raghultech.markdown.preview.JavaFXMarkdownPreview;
-import java.util.Scanner;
-
-public class Markdown {
-    public static void main(String[] args) {
-        String content = "# ☕ JavaFX Markdown Preview\n\n" +
-            "A simple and elegant **Markdown preview tool** using JavaFX and Flexmark.\n\n" +
-            "---\n\n" +
-            "## ✨ Features\n" +
-            "- 📂 Load `.md` files or string input\n" +
-            "- 🔄 Real-time file change detection\n" +
-            "- 🖥️ Separate JavaFX window for previewing\n" +
-            "- 🔁 Reopen preview window if closed\n";
-
-        JavaFXMarkdownPreview preview = new JavaFXMarkdownPreview(content);
-        preview.launchPreview();
-
-        Scanner scanner = new Scanner(System.in);
-
-        while (true) {
-            while (preview.isPreviewShowing()) {
-                try { Thread.sleep(1000); } catch (InterruptedException ignored) {}
-            }
-
-            System.out.print("Preview window closed. Reopen? (yes/no): ");
-            String response = scanner.nextLine().trim().toLowerCase();
-
-            if (response.equals("yes")) {
-                preview.reopenWindow();
-            } else {
-                System.out.println("Exiting...");
-                break;
-            }
-        }
-
-        scanner.close();
-        System.exit(0);
-    }
-}
-```
+> ✅ Tip: Each example is standalone—feel free to adapt and copy the patterns directly into your project.
 
 ---
 
@@ -177,23 +183,36 @@ public class Markdown {
 ### **Compile:**
 
 ```bash
-javac -cp JavaFX-Markdown-Preview-1.0.1.jar Markdown.java
+javac -cp java-markdown-preview-all-1.0.2.jar Markdown.java
 ```
 ### **Run:**
 
 > Windows:
 ```bash
-java -cp .;JavaFX-Markdown-Preview-1.0.1.jar Markdown
+java -cp .;java-markdown-preview-all-1.0.2.jar Markdown
 ```
 
 > Linux/macOS:
 ```bash
-java -cp .:JavaFX-Markdown-Preview-1.0.1.jar Markdown
+java -cp .:java-markdown-preview-all-1.0.2.jar Markdown
 ```
 ---
 
+
+
+## 🔍 Documentation
+
+- 📚 [Javadoc](https://javadoc.io/doc/io.github.raghul-tech/javafx-markdown-preview)
+
+- 📝 [Changelog](CHANGELOG.md)
+
+- ❓ [Issue Tracker](https://github.com/raghul-tech/javafx-Markdown-Preview/issues)
+
+---
+
+
 ## 🧩 Requirements
-- Java 8 or above
+- OpenJFX libraries if using Java 11+
 
 - JavaFX (use OpenJFX for Java 11+)
 
@@ -205,21 +224,6 @@ java -cp .:JavaFX-Markdown-Preview-1.0.1.jar Markdown
 
 * View all releases on the [Releases Page.](https://github.com/raghul-tech/JavaFX-Markdown-Preview/releases)
 * For a detailed log of all changes, refer to the [CHANGELOG.md](CHANGELOG.md) file.
-
----
-
-## ⚠️ Known Issues
-#### 🔄 Real-Time Typing Issues
-- The preview may break briefly when typing fast due to background re-parsing.
-
-- Workaround: Pause briefly or trigger a manual refresh if needed.
-
-#### 😀 Emoji Rendering in Offline Environments
-- Emoji rendering depends on online font support (e.g., via web or CDN).
-
-- Offline systems may display missing glyphs or boxes.
-
-- This is a system font limitation, not a library bug.
 
 ---
 
@@ -241,12 +245,12 @@ java -cp .:JavaFX-Markdown-Preview-1.0.1.jar Markdown
 ## 🐞 Report a Bug
    * If you've encountered a bug, please report it by clicking the link below. 
    	This will guide you through the bug-reporting process:
-   	➡️ [Click here to report a bug](https://github.com/raghul-tech/JavaFX-Markdown-Preview/issues)
+   	➡️ [Click here to report a bug](https://github.com/raghul-tech/JavaFX-Markdown-Preview/issues/new?template=bug_report.yaml)
  
 ---
 
 ## 📄 License
-- This project is licensed under the [MIT License](LICENSE).
+- This project is licensed under the [GNU General Public License v3 (GPL-3.0)](LICENSE).
 
 ---
 
